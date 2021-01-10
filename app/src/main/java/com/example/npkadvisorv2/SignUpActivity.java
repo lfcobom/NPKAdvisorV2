@@ -39,7 +39,7 @@ public class SignUpActivity extends Activity {
             }
         });
     }
-    public void Open() {  //ABRIR UNA NUEVA ACTIVIDAD
+    public void Open() {  //ABRIR UNA NUEVA ACTIVIDADj
         startActivity(new Intent(SignUpActivity.this, MainActivity.class));
     }
     public UserRequest createRequest(){
