@@ -34,8 +34,9 @@ public class MainActivity extends Activity {
         start_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                saveUser(createRequest());
-                saveUser(createRequest1());
+              if(validate()) {
+                  //data base code
+              }
             }
         });
     }
@@ -49,8 +50,19 @@ public class MainActivity extends Activity {
         userRequest.setNombre(password1.getText().toString());
         return userRequest;
     }
-    public void Open(View view){
+    public void Open(View view){  //ABRIR UNA NUEVA ACTIVIDAD
         startActivity(new Intent(MainActivity.this,SignUpActivity.class));
+    }
+    private Boolean validate(){ //VALIDAR QUE LOS CAMPOS DEL LOGIN NO ESTEN VACIOS
+        Boolean result = false;
+        String name = username1.getText().toString();
+        String password = password1.getText().toString();
+        if(name.isEmpty() && password.isEmpty()){
+            Toast.makeText(this, "Por favor ingrese sus credenciales",Toast.LENGTH_SHORT).show();
+        }else{
+            result = true;
+        }
+        return result;
     }
     public void saveUser(UserRequest userRequest){
         Call<UserResponse> userResponseCall = ApiClient.getUserService().saveUser(userRequest);

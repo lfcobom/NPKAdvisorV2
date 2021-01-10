@@ -39,6 +39,9 @@ public class SignUpActivity extends Activity {
             }
         });
     }
+    public void Open() {  //ABRIR UNA NUEVA ACTIVIDAD
+        startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+    }
     public UserRequest createRequest(){
         UserRequest userRequest = new UserRequest();
         userRequest.setNombre(name.getText().toString());
@@ -47,24 +50,37 @@ public class SignUpActivity extends Activity {
         userRequest.setPasswordC(passwordc.getText().toString());
         return userRequest;
     }
-    public void saveUser(UserRequest userRequest){
-        Call<UserResponse> userResponseCall = ApiClient.getUserService().saveUser(userRequest);
-        userResponseCall.enqueue(new Callback<UserResponse>() {
-            @Override
-            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
-                if(response.isSuccessful()){
-                    Toast.makeText(SignUpActivity.this, "exito",Toast.LENGTH_LONG).show();
-                }else
-                {
-                    Toast.makeText(SignUpActivity.this, "fallo",Toast.LENGTH_LONG).show();
-                }
-            }
+    private Boolean validate(){ //VALIDAR QUE LOS CAMPOS DEL LOGIN NO ESTEN VACIOS
+        Boolean result = false;
+        if(name.getText().toString().isEmpty() || username.getText().toString().isEmpty()||password.getText().toString().isEmpty()||
+        password.getText().toString().isEmpty()){
+            Toast.makeText(this, "Por favor complete todos los campos",Toast.LENGTH_LONG).show();
+        }else{
+            result = true;
+        }
+        return result;
+    }
+    public void saveUser(UserRequest userRequest) {
+        if(validate()) {
+            if ((userRequest.getPassword().equals(userRequest.getPasswordC()))) {
+                Call<UserResponse> userResponseCall = ApiClient.getUserService().saveUser(userRequest);
+                userResponseCall.enqueue(new Callback<UserResponse>() {
+                    @Override
+                    public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(SignUpActivity.this, "Registro exitoso, por favor inicie sesión", Toast.LENGTH_LONG).show();
+                            Open();
+                        }
+                    }
 
-            @Override
-            public void onFailure(Call<UserResponse> call, Throwable t) {
-                Toast.makeText(SignUpActivity.this, "Rquest Failed",Toast.LENGTH_LONG).show();
-
+                    @Override
+                    public void onFailure(Call<UserResponse> call, Throwable t) {
+                        Toast.makeText(SignUpActivity.this, "Verifique su conexión a internet", Toast.LENGTH_LONG).show();
+                    }
+                });
+            } else {
+                Toast.makeText(SignUpActivity.this, "Las contraseñas no coinciden", Toast.LENGTH_LONG).show();
             }
-        });
+        }
     }
 }

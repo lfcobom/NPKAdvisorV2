@@ -10,7 +10,7 @@ exports.addPersona = function(req, callback){
     objPersona.Nombre = req.body.Nombre;
     objPersona.Username = req.body.Username;
     objPersona.Password = req.body.Password;
-    objPersona.PasswordC = req.body.PasswordC
+    objPersona.PasswordC = req.body.PasswordC;
    
 
     objPersona.save(function(err, retorno){
