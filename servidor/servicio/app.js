@@ -2,7 +2,30 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var moongose = require("mongoose");
+var crypto = require('crypto')
 var app = express();
+
+//password utilities
+var genRandomString = function(lenght){
+    return crypto.randomBytes(Math.ceil(lenght/2)).toString('hex').slice(0,lenght);
+}
+
+var sha512 = function(password,salt){
+    var hash = crypto.createHmac('sha512',salt);
+    hash.update(password);
+    var value = hash.digest('hex');
+    return{salt:salt,passwordHash:value};
+}
+function saltHashPassword(userPassword){
+    var salt = genRandomString(16);
+    var passwordData = sha512(userPassword,salt)
+    return passwordData;
+}
+function checkHashPassword(userPassword,salt)
+{
+    var passwordData = sha512(userPassword,salt)
+    return passwordData;
+}
 
 //configuración
 app.use(bodyParser.json());
