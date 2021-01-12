@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -21,7 +22,7 @@ import retrofit2.Response;
 public class MainActivity extends Activity {
     EditText username1;
     EditText password1;
-    FloatingActionButton start_user;
+    ImageView start_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
