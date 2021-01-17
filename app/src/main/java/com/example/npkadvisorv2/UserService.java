@@ -7,9 +7,13 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface UserService {
+
+    //Añadir un nuevo usuario
     @POST("AddPersona/")
     Call<UserResponse> saveUser(@Body UserRequest userRequest);
 
-    @GET("findPersona/id/")
-    Call<UserResponse> listRepos(@Path("id") String id);
+    //Settings Login Authentication
+    @POST("login/")
+    Call<UserResponse>SignIn(@Body UserRequest userRequest);
+
 }

@@ -6,7 +6,7 @@ var personaSchema = new Schema({
     Username: String,
     Password: String,
     PasswordC: String,
-    create_at: {type: Date, required:true, default:Date.now},
+    //create_at: {type: Date, required:true, default:Date.now},
     //Sexo: {type:String, enum: ['Masculino','Femenino']},
     //IsProfesional: Boolean
 });

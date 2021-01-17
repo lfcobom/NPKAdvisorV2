@@ -44,13 +44,19 @@ moongose.connect('mongodb://localhost/NPKAdvisor', function(err,res){
     }
 })
 
+
+
+
 //definir el enrutamiento de las solicitudes
 
-var controladorPersona = require('./controladores/PersonaControlador')
+var controladorPersona = require('./controladores/PersonaControlador');
+const { db } = require("./modelos/personaModel");
+const { response } = require("express");
 var router = express.Router();
 router.get('/', function(req,res){
     res.send("hola mundo de el servicio node js");
-})
+});
+
 
 //agregar personas
 router.post('/API/persona/AddPersona', function(req,res){
@@ -59,6 +65,12 @@ router.post('/API/persona/AddPersona', function(req,res){
     });
 });
 
+
+router.post('/API/Persona/login', function(req,res){
+    controladorPersona.loginl(req,function(data) {
+     res.send(data);
+    });
+});
 //actualizar personas
 router.put('/API/persona/UpdatePersona/:id', function(req,res){
     controladorPersona.updatePersona(req, function(data){
@@ -86,7 +98,5 @@ router.get('/API/persona/findPersona/:id', function(req,res){
         res.send(data);
     });
 });
-
-
 app.use(router);
 
