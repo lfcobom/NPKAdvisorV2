@@ -35,6 +35,7 @@ public class MainActivity extends Activity {
         start_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Open();
                 if (validate()) {
                     SignIn(Credenciales());
                 }
