@@ -69,12 +69,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp">
+                android:layout_marginTop="10dp">
 
                 <ImageView
-                    android:id="@+id/imageView17"
-                    android:layout_width="93dp"
-                    android:layout_height="match_parent"
+                    android:id="@+id/vercultivos"
+                    android:layout_width="130dp"
+                    android:layout_height="158dp"
                     android:background="@mipmap/checkicon" />
 
                 <ImageView
@@ -85,19 +85,19 @@
             </TableRow>
 
             <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:id="@+id/imageView18"
-                    android:layout_width="157dp"
-                    android:layout_height="144dp"
+                    android:layout_width="130dp"
+                    android:layout_height="158dp"
                     android:background="@mipmap/deleteicon" />
 
                 <ImageView
                     android:id="@+id/imageView16"
-                    android:layout_width="156dp"
-                    android:layout_height="144dp"
+                    android:layout_width="130dp"
+                    android:layout_height="158dp"
                     android:background="@mipmap/registericon" />
             </TableRow>
 
