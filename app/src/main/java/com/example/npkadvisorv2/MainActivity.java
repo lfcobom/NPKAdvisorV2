@@ -82,7 +82,7 @@ public class MainActivity extends Activity {
 
                 @Override
                 public void onFailure(Call<UserResponse> call, Throwable t) {
-                    Toast.makeText(MainActivity.this, "Rquest Failed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Request Failed", Toast.LENGTH_LONG).show();
 
                 }
             });

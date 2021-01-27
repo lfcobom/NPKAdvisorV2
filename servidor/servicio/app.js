@@ -50,6 +50,7 @@ moongose.connect('mongodb://localhost/NPKAdvisor', function(err,res){
 //definir el enrutamiento de las solicitudes
 
 var controladorPersona = require('./controladores/PersonaControlador');
+var controladorCultivo = require('./controladores/CropControlador');
 const { db } = require("./modelos/personaModel");
 const { response } = require("express");
 var router = express.Router();
@@ -65,8 +66,14 @@ router.post('/API/persona/AddPersona', function(req,res){
     });
 });
 
+//agregar cultivos
+router.post('/API/cultivo/AddCultivo', function(req,res){
+    controladorCultivo.addCultivo(req,function(data){
+        res.send(data);
+    });
+});
 
-router.post('/API/Persona/login', function(req,res){
+router.post('/API/persona/login', function(req,res){
     controladorPersona.loginl(req,function(data) {
      res.send(data);
     });
@@ -88,6 +95,13 @@ router.delete('/API/persona/DeletePersona/:id', function(req,res){
 // buscar todas las personas 
 router.get('/API/persona/finAllPersona', function(req,res){
     controladorPersona.finAllPersona(req, function(data){
+        res.send(data);
+    });
+});
+
+//buscar todos los cultivos
+router.get('/API/cultivo/findAllCultivo', function(req,res){
+    controladorCultivo.findAllCultivo(req,function(data){
         res.send(data);
     });
 });

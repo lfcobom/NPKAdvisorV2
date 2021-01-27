@@ -66,7 +66,7 @@ exports.loginl = function(req,callback){
     PersonaModel.find({'Username': req.body.Username, 'Password': req.body.Password}, function(err,retorno){
         if(err)callback({estado: {codigo:2 , respuesta:'Incorrect'}});
         if(retorno.length == 1){
-            console.log("obvio funciona");
+            //console.log("obvio funciona");
             callback({estado:{codigo: 1, respuesta:'login succesful'}, persona: retorno.length},);
         }else{
             callback({estado: {codigo:2 , respuesta:'Verifique sus credenciales'}});

@@ -9,11 +9,15 @@ import retrofit2.http.Path;
 public interface UserService {
 
     //Añadir un nuevo usuario
-    @POST("AddPersona/")
+    @POST("persona/AddPersona/")
     Call<UserResponse> saveUser(@Body UserRequest userRequest);
 
     //Settings Login Authentication
-    @POST("login/")
+    @POST("persona/login/")
     Call<UserResponse>SignIn(@Body UserRequest userRequest);
+
+    //añadir un cultivo
+    @POST("cultivo/addCultivo/")
+    Call<CropResponse>saveCrop(@Body CropRequest cropRequest);
 
 }

@@ -10,12 +10,28 @@ import android.widget.ImageView;
 
 public class MainMenu extends Activity {
     ImageView vercultivos;
+    ImageView miscultivos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         vercultivos = findViewById(R.id.vercultivos);
+        miscultivos = findViewById(R.id.imageView15);
+
+        vercultivos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Open2();
+            }
+        });
+
+        miscultivos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Open1();
+            }
+        });
 
         vercultivos.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -25,6 +41,15 @@ public class MainMenu extends Activity {
         });
     }
     public void Open() {  //Lleva a la actividad de Menú después de autenticar las credenciales.
+
         startActivity(new Intent(MainMenu.this, Charts.class));
+    }
+    public void Open1() {  //Lleva a la actividad de Menú después de autenticar las credenciales.
+
+        startActivity(new Intent(MainMenu.this, ScreenCrops.class));
+    }
+    public void Open2() {  //Lleva a la actividad de Menú después de autenticar las credenciales.
+
+        startActivity(new Intent(MainMenu.this, SignUpActivity.class));
     }
 }
