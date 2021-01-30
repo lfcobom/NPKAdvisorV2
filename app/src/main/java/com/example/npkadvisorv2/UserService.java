@@ -1,5 +1,7 @@
 package com.example.npkadvisorv2;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -20,4 +22,7 @@ public interface UserService {
     @POST("cultivo/addCultivo/")
     Call<CropResponse>saveCrop(@Body CropRequest cropRequest);
 
+    //consultar todos los cultivos
+    @GET("cultivo/findAllCultivo")
+        Call<CropResponse> findAllC();
 }

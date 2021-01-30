@@ -1,11 +1,7 @@
 var mongoose = require('mongoose');
 const personaModel = require('../modelos/personaModel.js');
 require('../modelos/personaModel.js');
-//require('../modelos/publicacionModel.js');
 var PersonaModel = mongoose.model('Persona');
-//var PublicacionModel = mongoose.model('Publicacion');
-var User = require('../modelos/personaModel');
-const { count } = require('../modelos/personaModel.js');
 
 //Agregar un nuevo Usuario
 exports.addPersona = function(req, callback){

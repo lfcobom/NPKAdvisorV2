@@ -1,5 +1,5 @@
 {
-    "name": "servisePersona",
+    "name": "servisepersona",
     "version": "1.0.0",
     "dependencies": {
         "body-parser": "^1.19.0",
@@ -7,5 +7,6 @@
         "fs": "0.0.1-security",
         "method-override": "^2.1.2",
         "mongoose": "^5.11.0"
-    }
+    },
+    "scripts": { "serve": "nodemon app.js"}
 }

@@ -9,17 +9,19 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class MainMenu extends Activity {
-    ImageView vercultivos;
+    ImageView charts;
     ImageView miscultivos;
+    ImageView gis;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-        vercultivos = findViewById(R.id.vercultivos);
+        charts = findViewById(R.id.vercultivos);
         miscultivos = findViewById(R.id.imageView15);
+        gis = findViewById(R.id.imageView18);
 
-        vercultivos.setOnClickListener(new View.OnClickListener() {
+        gis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Open2();
@@ -33,7 +35,7 @@ public class MainMenu extends Activity {
             }
         });
 
-        vercultivos.setOnClickListener(new View.OnClickListener() {
+        charts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Open();

@@ -11,12 +11,13 @@ public class ApiClient {
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://5dd83c931bef.ngrok.io/API/")
+                .baseUrl("http://42798a6d45de.ngrok.io/API/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();
         return retrofit;
     }
+
     public static UserService getUserService(){
         UserService userService = getRetrofit().create(UserService.class);
         return userService;
