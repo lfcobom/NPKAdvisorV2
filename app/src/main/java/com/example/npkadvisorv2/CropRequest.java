@@ -13,13 +13,13 @@ public class CropRequest {
         this.CNombre = CNombre;
     }
 
-   // public float getCArea() {
-     //   return CArea;
-    //}
+    public float getCArea() {
+       return CArea;
+    }
 
-    //public void setCArea(float CArea) {
-      //  this.CArea = CArea;
-    //}
+    public void setCArea(float CArea) {
+        this.CArea = CArea;
+    }
 
-    //private float CArea;
+    private float CArea;
 }

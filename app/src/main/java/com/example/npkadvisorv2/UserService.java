@@ -19,7 +19,7 @@ public interface UserService {
     Call<UserResponse>SignIn(@Body UserRequest userRequest);
 
     //añadir un cultivo
-    @POST("cultivo/addCultivo/")
+    @POST("cultivo")
     Call<CropResponse>saveCrop(@Body CropRequest cropRequest);
 
     //consultar todos los cultivos

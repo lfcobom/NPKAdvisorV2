@@ -21,7 +21,7 @@ import retrofit2.Response;
 
 public class ScreenCrops extends Activity {
     EditText cropname;
-    //EditText croparea;
+    EditText croparea;
     ImageView btn_add;
     ImageView bnt_delete;
     ImageView bnt_ver;
@@ -34,7 +34,7 @@ public class ScreenCrops extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen_crops);
         cropname = findViewById(R.id.cropname);
-        //croparea = findViewById(R.id.croparea);
+        croparea = findViewById(R.id.croparea);
         btn_add = findViewById(R.id.btn_cropadd);
         bnt_delete = findViewById(R.id.btn_cropdelete);
         bnt_ver = findViewById(R.id.btn_supervisar);
@@ -52,7 +52,7 @@ public class ScreenCrops extends Activity {
             public CropRequest createRequest() {
                 CropRequest cropRequest = new CropRequest();
                 cropRequest.setCNombre(cropname.getText().toString());
-                //cropRequest.setCArea(Float.parseFloat(croparea.getText().toString()));
+                cropRequest.setCArea(Float.parseFloat(croparea.getText().toString()));
                 return cropRequest;
             }
             public void saveCrop(CropRequest cropRequest) {

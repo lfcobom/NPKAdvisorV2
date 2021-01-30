@@ -20,7 +20,7 @@ routerc.get(`/${pathc}`, function(req,res){
     });
 });
 
-//Buscar un usuario
+//Buscar un usuario :)
 routerc.get(`/${pathc2}`, function(req,res){
     controllerc.findByIdCrop(req, function(data){
         res.send(data);
