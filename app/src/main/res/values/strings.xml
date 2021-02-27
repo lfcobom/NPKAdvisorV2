@@ -2,4 +2,6 @@
     <string name="app_name">NPKAdvisorV2</string>
     <string name="underline"><u>Ayuda</u></string>
     <string name="bold">¿No tienes una cuenta?<b> Registrate</b></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

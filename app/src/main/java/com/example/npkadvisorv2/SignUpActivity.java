@@ -16,7 +16,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SignUpActivity extends Activity {
+public class SignUpActivity extends AppCompatActivity {
     EditText name;
     EditText username;
     EditText password;

@@ -1,9 +1,15 @@
 package com.example.npkadvisorv2;
 
+import com.google.gson.JsonArray;
+
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -20,9 +26,9 @@ public interface UserService {
 
     //añadir un cultivo
     @POST("cultivo")
-    Call<CropResponse>saveCrop(@Body CropRequest cropRequest);
+    Call<CropResponse>saveCrop(@Body CropResponse cropRequest);
 
     //consultar todos los cultivos
-    @GET("cultivo/findAllCultivo")
-        Call<CropResponse> findAllC();
+    @GET("cultivo")
+        Call<CropResponse>findAllC();
 }

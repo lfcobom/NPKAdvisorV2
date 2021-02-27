@@ -34,8 +34,8 @@ exports.updateCrop = function(req, callback){
 //Configuración Buscar todos los cultivos
 exports.finAllCrop = function(req, callback){
     CropModel.find({},function(err,cultivosBuscados){
-        if(err) callback({estado: {codigo:2 , respuesta: err.message} });
-        callback({estado:{codigo: 1, respuesta:'proceso exitoso'}, cultivos: cultivosBuscados});
+        //if(err) callback({estado: {codigo:2 , respuesta: err.message} });
+        callback({cultivosBuscados});
 
     });
 };
@@ -43,7 +43,6 @@ exports.finAllCrop = function(req, callback){
 //Eliminar un cultivo usando ID
 exports.deleteCrop = function(req, callback){
     CropModel.findById(req.params.id, function(err,cropBuscado){
-     
         cropBuscado.remove(function(err){
             if(err) callback({estado: {codigo:2 , respuesta: err.message} });
             callback({estado:{codigo: 1, respuesta:'proceso exitoso'}});

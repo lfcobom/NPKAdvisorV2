@@ -74,7 +74,7 @@ exports.loginl = function(req,callback){
 exports.finAllPersona = function(req, callback){
     PersonaModel.find({},function(err,personasBuscadas){
         if(err) callback({estado: {codigo:2 , respuesta: err.message} });
-        callback({estado:{codigo: 1, respuesta:'proceso exitoso'}, persona: personasBuscadas});
+        callback({persona: personasBuscadas});
 
     });
 };

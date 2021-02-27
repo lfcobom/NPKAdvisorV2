@@ -25,7 +25,6 @@ public class splashscreen extends Activity {
                 finish();
             }
 
-            ;
         }, last_splash);
     }
 }

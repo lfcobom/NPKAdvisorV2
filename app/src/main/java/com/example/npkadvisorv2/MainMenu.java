@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class MainMenu extends Activity {
+public class MainMenu extends AppCompatActivity {
     ImageView charts;
     ImageView miscultivos;
     ImageView gis;
@@ -48,7 +48,7 @@ public class MainMenu extends Activity {
     }
     public void Open1() {  //Lleva a la actividad de Menú después de autenticar las credenciales.
 
-        startActivity(new Intent(MainMenu.this, ScreenCrops.class));
+        startActivity(new Intent(MainMenu.this, ScreenCropss.class));
     }
     public void Open2() {  //Lleva a la actividad de Menú después de autenticar las credenciales.
 

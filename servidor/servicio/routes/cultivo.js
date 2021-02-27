@@ -16,7 +16,8 @@ routerc.post(`/${pathc}`,function(req,res){
 //Buscar todos los usuarios
 routerc.get(`/${pathc}`, function(req,res){
     controllerc.finAllCrop(req, function(data){
-        res.send(data);
+     res.send(data);
+
     });
 });
 

@@ -28,16 +28,16 @@ import java.util.ArrayList;
 public class Charts extends Activity {
     private PieChart pieChart;
     private BarChart barChart;
-    private String[]months=new String[]{"Enero","Febrero","Marzo","Abril"};
-    private int[]sale=new int[]{25,20,38,10,15};
-    private int[]colors=new int[]{Color.BLACK,Color.RED,Color.GREEN,Color.BLUE,Color.LTGRAY};
+    private final String[]months=new String[]{"Enero","Febrero","Marzo","Abril"};
+    private final int[]sale=new int[]{25,20,38,10,15};
+    private final int[]colors=new int[]{Color.BLACK,Color.RED,Color.GREEN,Color.BLUE,Color.LTGRAY};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charts);
-        barChart =(BarChart)findViewById(R.id.barChart);
-        pieChart=(PieChart)findViewById(R.id.pieChart);
+        barChart = findViewById(R.id.barChart);
+        pieChart= findViewById(R.id.pieChart);
         createCharts();
     }
     private Chart getSameChart(Chart chart, String description,int textColor,int background, int animateY){

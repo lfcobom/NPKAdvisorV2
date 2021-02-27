@@ -1,17 +1,45 @@
 package com.example.npkadvisorv2;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 public class UserRequest {
-private String Nombre;
 
-    public String getUsername() {
-        return Username;
+    @SerializedName("_id")
+    @Expose
+    private String id;
+
+    @SerializedName("Nombre")
+    @Expose
+    private String Nombre;
+
+    @SerializedName("Username")
+    @Expose
+    private String username;
+
+    @SerializedName("Password")
+    @Expose
+    private String password;
+
+    @SerializedName("PasswordC")
+    @Expose
+    private String passwordC;
+
+    @SerializedName("__v")
+    @Expose
+    private Integer v;
+
+    @SerializedName("Create_at")
+    @Expose
+    private String createat;
+
+    public String getId() {
+        return id;
     }
 
-    public void setUsername(String username) {
-        Username = username;
+    public void setId(String id) {
+        this.id = id;
     }
-
-    private String Username;
 
     public String getNombre() {
         return Nombre;
@@ -21,23 +49,55 @@ private String Nombre;
         Nombre = nombre;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public String getPasswordC() {
-        return PasswordC;
+        return passwordC;
     }
 
     public void setPasswordC(String passwordC) {
-        PasswordC = passwordC;
+        this.passwordC = passwordC;
     }
 
-    private String Password;
-    private String PasswordC;
+    public Integer getV() {
+        return v;
+    }
 
+    public void setV(Integer v) {
+        this.v = v;
+    }
+
+    public String getCreateat() {
+        return createat;
+    }
+
+    public void setCreateat(String createat) {
+        this.createat = createat;
+    }
+    @Override
+    public String toString() {
+        return "UserRequest{" +
+                "id='" + id + '\'' +
+                ", Nombre='" + Nombre + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", passwordC='" + passwordC + '\'' +
+                ", v=" + v +
+                ", createat='" + createat + '\'' +
+                '}';
+    }
 }

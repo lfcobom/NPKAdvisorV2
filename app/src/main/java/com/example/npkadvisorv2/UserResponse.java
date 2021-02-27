@@ -1,15 +1,28 @@
 package com.example.npkadvisorv2;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.ArrayList;
+
 public class UserResponse {
 
-    public String getUsername() {
-        return username;
+    public ArrayList<UserRequest> getUsuariosBuscados() {
+        return usuariosBuscados;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsuariosBuscados(ArrayList<UserRequest> usuariosBuscados) {
+        this.usuariosBuscados = usuariosBuscados;
     }
 
-    private String username;
+    @SerializedName("persona")
+    @Expose
+    private ArrayList<UserRequest> usuariosBuscados;
 
+    @Override
+    public String toString() {
+        return "UserResponse{" +
+                "usuariosBuscados=" + usuariosBuscados +
+                '}';
+    }
 }

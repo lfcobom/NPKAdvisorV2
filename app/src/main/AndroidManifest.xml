@@ -11,18 +11,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NPKAdvisorV2">
-        <activity android:name=".ScreenCrops"></activity>
-        <activity android:name=".Charts" />
-        <activity android:name=".MainMenu" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".splashscreen">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <activity android:name=".MainMenu"></activity>
+        <activity android:name=".Charts"></activity>
+        <activity android:name=".splashscreen"></activity>
+        <activity android:name=".ScreenCropss"></activity>
+        <activity android:name=".SignUpActivity"></activity>
 
+    </application>
 </manifest>
