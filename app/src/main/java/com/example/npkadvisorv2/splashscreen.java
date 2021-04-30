@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
-public class splashscreen extends Activity {
+public class splashscreen extends AppCompatActivity {
     private final int last_splash = 4000;
 
     @Override

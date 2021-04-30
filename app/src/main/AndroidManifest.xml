@@ -10,18 +10,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NPKAdvisorV2">
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".RegInfo"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenu"></activity>
-        <activity android:name=".Charts"></activity>
-        <activity android:name=".splashscreen"></activity>
-        <activity android:name=".ScreenCropss"></activity>
-        <activity android:name=".SignUpActivity"></activity>
-
+        <activity android:name=".MainMenu" />
+        <activity android:name=".Charts" />
+        <activity android:name=".splashscreen" />
+        <activity android:name=".ScreenCropss" />
+        <activity android:name=".SignUpActivity" />
     </application>
+
 </manifest>

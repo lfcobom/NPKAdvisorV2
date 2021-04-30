@@ -12,7 +12,7 @@ public class ApiClient {
         httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://4219d7c82067.ngrok.io/")
+                .baseUrl("http://56f7cb8d1f0d.ngrok.io/") //URL del servidor
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(okHttpClient)
                 .build();

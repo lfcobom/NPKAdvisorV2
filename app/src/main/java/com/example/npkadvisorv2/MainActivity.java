@@ -19,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     EditText username1;
     EditText password1;
     ImageView start_user;

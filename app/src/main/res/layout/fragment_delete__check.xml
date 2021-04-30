@@ -47,6 +47,11 @@
                 android:text="Escoge el cultivo"
                 android:textSize="18sp" />
 
+            <Spinner
+                android:id="@+id/spinnerdelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
             <ImageView
                 android:id="@+id/btn_eliminar"
                 android:layout_width="47dp"

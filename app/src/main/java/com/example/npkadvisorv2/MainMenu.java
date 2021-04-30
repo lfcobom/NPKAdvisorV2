@@ -2,7 +2,6 @@ package com.example.npkadvisorv2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,47 +10,67 @@ import android.widget.ImageView;
 public class MainMenu extends AppCompatActivity {
     ImageView charts;
     ImageView miscultivos;
-    ImageView gis;
+    ImageView regInfo;
+    ImageView maps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-        charts = findViewById(R.id.vercultivos);
-        miscultivos = findViewById(R.id.imageView15);
-        gis = findViewById(R.id.imageView18);
+        charts = findViewById(R.id.graphics);
+        miscultivos = findViewById(R.id.vercultivos);
+        maps = findViewById(R.id.maps);
+        regInfo = findViewById(R.id.reginfo);
 
-        gis.setOnClickListener(new View.OnClickListener() {
+        //Actividad Mapas
+        maps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Open2();
             }
         });
 
+        //Actividad Mis Cultivos
         miscultivos.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Open1();
-            }
-        });
-
-        charts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Open();
             }
         });
-    }
-    public void Open() {  //Lleva a la actividad de Menú después de autenticar las credenciales.
 
-        startActivity(new Intent(MainMenu.this, Charts.class));
+        //Actividad Gráficas
+        charts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Open3();
+            }
+        });
+
+        //Actividad Registro de Información
+        regInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Open1();
+            }
+        });
     }
-    public void Open1() {  //Lleva a la actividad de Menú después de autenticar las credenciales.
+
+
+    public void Open() {  //Lleva a la actividad Mis Cultivos
 
         startActivity(new Intent(MainMenu.this, ScreenCropss.class));
     }
-    public void Open2() {  //Lleva a la actividad de Menú después de autenticar las credenciales.
+    public void Open1() {  //Lleva a la actividad Registro de información
 
-        startActivity(new Intent(MainMenu.this, SignUpActivity.class));
+        startActivity(new Intent(MainMenu.this, ScreenCropss.class));
+    }
+    public void Open2() {  //Lleva a la actividad Mapas
+
+        startActivity(new Intent(MainMenu.this, RegInfo.class));
+    }
+
+    public void Open3() {  //Lleva a la actividad Gráficas
+
+        startActivity(new Intent(MainMenu.this, Charts.class));
     }
 }

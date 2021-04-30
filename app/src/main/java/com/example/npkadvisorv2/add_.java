@@ -7,6 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +30,9 @@ public class add_ extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private EditText cropnombre;
+    private EditText croparea;
+    private ImageView button;
 
     public add_() {
         // Required empty public constructor
@@ -59,6 +69,42 @@ public class add_ extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add, container, false);
+        View view = inflater.inflate(R.layout.fragment_add, container, false);
+
+        cropnombre = view.findViewById(R.id.cropname);
+        croparea = view.findViewById(R.id.croparea);
+        button = view.findViewById(R.id.btn_cropadd);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                saveCrop(createRequest());
+            }
+        });
+
+        return view;
+    }
+
+    public CropResponse2 createRequest(){
+        CropResponse2 cropRequest = new CropResponse2();
+        cropRequest.setCNombre(cropnombre.getText().toString());
+        cropRequest.setCArea( Double.parseDouble(croparea.getText().toString()));
+        return cropRequest;
+    }
+
+    public void saveCrop(CropResponse2 cropRequest) {
+                Call<CropResponse> userResponseCall = ApiClient.getUserService().saveCrop(cropRequest);
+                userResponseCall.enqueue(new Callback<CropResponse>() {
+                    @Override
+                    public void onResponse(Call<CropResponse> call, Response<CropResponse> response) {
+                        if (response.isSuccessful()) {
+                            Toast.makeText(getContext(), "Registro exitoso", Toast.LENGTH_LONG).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<CropResponse> call, Throwable t) {
+                        Toast.makeText(getContext(), "Verifique su conexión a internet", Toast.LENGTH_LONG).show();
+                    }
+                });
     }
 }

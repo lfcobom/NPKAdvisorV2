@@ -26,9 +26,13 @@ public interface UserService {
 
     //añadir un cultivo
     @POST("cultivo")
-    Call<CropResponse>saveCrop(@Body CropResponse cropRequest);
+    Call<CropResponse>saveCrop(@Body CropResponse2 cropRequest);
 
     //consultar todos los cultivos
     @GET("cultivo")
-        Call<CropResponse>findAllC();
+    Call<CropResponse>findAllC();
+
+    //Consultar variables Humedad, Npk, Temperatura
+    @GET("index")
+    Call<IndexResponse>findIndex();
 }
