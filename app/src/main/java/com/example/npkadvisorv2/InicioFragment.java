@@ -2,6 +2,7 @@ package com.example.npkadvisorv2;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
@@ -38,6 +39,7 @@ public class InicioFragment extends Fragment {
      * @return A new instance of fragment InicioFragment.
      */
     // TODO: Rename and change types and number of parameters
+    @NonNull
     public static InicioFragment newInstance(String param1, String param2) {
         InicioFragment fragment = new InicioFragment();
         Bundle args = new Bundle();
@@ -57,7 +59,7 @@ public class InicioFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_inicio, container, false);

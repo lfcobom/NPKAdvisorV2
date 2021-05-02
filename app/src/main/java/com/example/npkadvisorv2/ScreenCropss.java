@@ -11,6 +11,7 @@ import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -40,7 +41,7 @@ public class ScreenCropss extends AppCompatActivity {
         fragmentD = new Delete_Check();
         getSupportFragmentManager().beginTransaction().add(R.id.contenedorFragmentAM, fragmentInicio).commit();
     }
-    public void onClick(View view)
+    public void onClick(@NonNull View view)
     {
         transaction = getSupportFragmentManager().beginTransaction();
         switch (view.getId())

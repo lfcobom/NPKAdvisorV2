@@ -2,6 +2,7 @@ package com.example.npkadvisorv2;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -47,6 +48,7 @@ public class add_ extends Fragment {
      * @return A new instance of fragment add_.
      */
     // TODO: Rename and change types and number of parameters
+    @NonNull
     public static add_ newInstance(String param1, String param2) {
         add_ fragment = new add_();
         Bundle args = new Bundle();
@@ -66,7 +68,7 @@ public class add_ extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_add, container, false);
@@ -84,6 +86,7 @@ public class add_ extends Fragment {
         return view;
     }
 
+    @NonNull
     public CropResponse2 createRequest(){
         CropResponse2 cropRequest = new CropResponse2();
         cropRequest.setCNombre(cropnombre.getText().toString());

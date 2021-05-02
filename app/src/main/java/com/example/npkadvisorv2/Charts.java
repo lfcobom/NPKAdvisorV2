@@ -1,5 +1,6 @@
 package com.example.npkadvisorv2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -40,7 +41,8 @@ public class Charts extends Activity {
         pieChart= findViewById(R.id.pieChart);
         createCharts();
     }
-    private Chart getSameChart(Chart chart, String description,int textColor,int background, int animateY){
+    @NonNull
+    private Chart getSameChart(@NonNull Chart chart, String description, int textColor, int background, int animateY){
         chart.getDescription().setText(description);
         chart.getDescription().setTextSize(15);
         chart.setBackgroundColor(background);
@@ -48,7 +50,7 @@ public class Charts extends Activity {
         return chart;
 
     }
-    private void legend(Chart chart){
+    private void legend(@NonNull Chart chart){
         Legend legend = chart.getLegend();
         legend.setForm(Legend.LegendForm.CIRCLE);
         legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
@@ -61,28 +63,30 @@ public class Charts extends Activity {
         }
         legend.setCustom(entries);
     }
+    @NonNull
     private ArrayList<BarEntry>getBarEntries() {
         ArrayList<BarEntry> entries = new ArrayList<>();
         for (int i = 0; i < sale.length; i++)
             entries.add(new BarEntry(i,sale[i]));
         return entries;
     }
+    @NonNull
     private ArrayList<PieEntry>getPieEntries() {
         ArrayList<PieEntry> entries = new ArrayList<>();
         for (int i = 0; i < sale.length; i++)
             entries.add(new PieEntry(sale[i]));
         return entries;
     }
-    private void axisX(XAxis axis){
+    private void axisX(@NonNull XAxis axis){
         axis.setGranularityEnabled(true);
         axis.setPosition(XAxis.XAxisPosition.BOTTOM);
         axis.setValueFormatter(new IndexAxisValueFormatter(months));
     }
-    private void axisLeft(YAxis axis){
+    private void axisLeft(@NonNull YAxis axis){
         axis.setSpaceTop(30);
         axis.setAxisMinimum(0);
     }
-    private void axisRight(YAxis axis){
+    private void axisRight(@NonNull YAxis axis){
         axis.setEnabled(false);
     }
     public void createCharts() {
@@ -102,12 +106,14 @@ public class Charts extends Activity {
         pieChart.invalidate();
 
     }
-    private DataSet getData(DataSet dataSet) {
+    @NonNull
+    private DataSet getData(@NonNull DataSet dataSet) {
         dataSet.setColors(colors);
         dataSet.setValueTextSize(Color.WHITE);
         dataSet.setValueTextSize(10);
         return dataSet;
     }
+    @NonNull
     private BarData getBarData(){
         BarDataSet barDataSet=(BarDataSet)getData(new BarDataSet(getBarEntries(),""));
         barDataSet.setBarShadowColor(Color.GRAY);
@@ -115,6 +121,7 @@ public class Charts extends Activity {
         barData.setBarWidth(0.45f);
         return barData;
     }
+    @NonNull
     private PieData getPieData(){
         PieDataSet pieDataSet=(PieDataSet) getData(new PieDataSet(getPieEntries(),""));
         pieDataSet.setSliceSpace(2);

@@ -2,6 +2,8 @@ package com.example.npkadvisorv2;
 
 import android.text.Editable;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -65,6 +67,7 @@ public class CropResponse2 {
         this.cArea = cArea;
     }
 
+    @NonNull
     @Override
     public String toString() {
         return cNombre;

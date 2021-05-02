@@ -1,5 +1,6 @@
 package com.example.npkadvisorv2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -42,6 +43,7 @@ public class SignUpActivity extends AppCompatActivity {
     public void Open() {  //ABRIR UNA NUEVA ACTIVIDADj
         startActivity(new Intent(SignUpActivity.this, MainActivity.class));
     }
+    @NonNull
     public UserRequest createRequest(){
         UserRequest userRequest = new UserRequest();
         userRequest.setNombre(name.getText().toString());
@@ -50,6 +52,7 @@ public class SignUpActivity extends AppCompatActivity {
         userRequest.setPasswordC(passwordc.getText().toString());
         return userRequest;
     }
+    @NonNull
     private Boolean validate(){ //VALIDAR QUE LOS CAMPOS DEL LOGIN NO ESTEN VACIOS
         Boolean result = false;
         if(name.getText().toString().isEmpty() || username.getText().toString().isEmpty()||password.getText().toString().isEmpty()||
@@ -60,7 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
         }
         return result;
     }
-    public void saveUser(UserRequest userRequest) {
+    public void saveUser(@NonNull UserRequest userRequest) {
         if(validate()) {
             if ((userRequest.getPassword().equals(userRequest.getPasswordC()))) {
                 Call<UserResponse> userResponseCall = ApiClient.getUserService().saveUser(userRequest);

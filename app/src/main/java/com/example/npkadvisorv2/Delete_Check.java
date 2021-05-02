@@ -2,6 +2,7 @@
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -50,6 +51,7 @@ public class Delete_Check extends Fragment {
      * @return A new instance of fragment Delete_Check.
      */
     // TODO: Rename and change types and number of parameters
+    @NonNull
     public static Delete_Check newInstance(String param1, String param2) {
         Delete_Check fragment = new Delete_Check();
         Bundle args = new Bundle();
@@ -69,7 +71,7 @@ public class Delete_Check extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_delete__check, container, false);
         spinnerdelete1 = view.findViewById(R.id.spinnerdelete);

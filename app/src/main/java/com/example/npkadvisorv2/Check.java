@@ -2,6 +2,7 @@ package com.example.npkadvisorv2;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -65,6 +66,7 @@ public class Check extends Fragment {
      * @return A new instance of fragment Check.
      */
     // TODO: Rename and change types and number of parameters
+    @NonNull
     public static Check newInstance(String param1, String param2) {
         Check fragment = new Check();
         Bundle args = new Bundle();
@@ -86,7 +88,7 @@ public class Check extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_check, container, false);

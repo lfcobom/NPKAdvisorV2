@@ -3,19 +3,21 @@ package com.example.npkadvisorv2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static androidx.constraintlayout.motion.utils.Oscillator.TAG;
+//https://www.ibm.com/docs/es/db2/11.1?topic=documents-key-concepts
 
 public class RegInfo extends AppCompatActivity {
     Button pruebaGet;
@@ -25,6 +27,8 @@ public class RegInfo extends AppCompatActivity {
     TextView K;
     TextView Ph;
     TextView Temp;
+    TextView horas;
+    TextView fecha;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,9 @@ public class RegInfo extends AppCompatActivity {
         K = findViewById(R.id.k);
         Ph = findViewById(R.id.ph);
         Temp = findViewById(R.id.temp);
+        horas = findViewById(R.id.time);
+        fecha = findViewById(R.id.date);
+        horas = findViewById(R.id.time);
         pruebaGet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +53,18 @@ public class RegInfo extends AppCompatActivity {
     }
 
     public void Index() {
-            Call<IndexResponse> indexResponseCall = ApiClient.getUserService().findIndex();
+
+        Calendar rightNow = Calendar.getInstance(); //FORMATO DATE
+        int hour = rightNow.get(Calendar.HOUR_OF_DAY);
+        int min = rightNow.get(Calendar.MINUTE);
+
+        //https://mkyong.com/java/java-date-and-calendar-examples/
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/M/yyyy");
+        String date = sdf.format(new Date());
+
+
+
+            Call<IndexResponse> indexResponseCall = ApiClient.getUserService().findIndex1();
             indexResponseCall.enqueue(new Callback<IndexResponse>() {
                 @Override
                 public void onResponse(Call<IndexResponse> call, Response<IndexResponse> response) {
@@ -59,6 +77,8 @@ public class RegInfo extends AppCompatActivity {
                             K.setText((IndexReponses.get(i).getK()).toString());
                             Ph.setText((IndexReponses.get(i).getPh()).toString());
                             Temp.setText((IndexReponses.get(i).getTemp()).toString());
+                            horas.setText(hour +":"+ min);
+                            fecha.setText(date);
                         }
 
                     } else {

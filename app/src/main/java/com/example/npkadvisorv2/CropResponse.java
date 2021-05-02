@@ -1,5 +1,7 @@
 package com.example.npkadvisorv2;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -20,6 +22,7 @@ import java.util.List;
             this.cultivosBuscados = cultivosBuscados;
         }
 
+        @NonNull
         @Override
         public String toString() {
             return "cultivosBuscados{" +

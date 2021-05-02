@@ -1,5 +1,6 @@
 package com.example.npkadvisorv2;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -43,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @NonNull
     public UserRequest Credenciales() {
         UserRequest userRequest = new UserRequest();
         userRequest.setUsername(username1.getText().toString());
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, MainMenu.class));
     }
 
+    @NonNull
     private Boolean validate() { //VALIDAR QUE LOS CAMPOS DEL LOGIN NO ESTEN VACIOS
         Boolean result = false;
         String name = username1.getText().toString();

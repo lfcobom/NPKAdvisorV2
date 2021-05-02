@@ -1,5 +1,7 @@
 package com.example.npkadvisorv2;
 
+import androidx.annotation.NonNull;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -105,6 +107,7 @@ public class IndexResponse2 {
     @Expose
     private Integer v;
 
+    @NonNull
     @Override
     public String toString() {
         return "IndexResponse2{" +
