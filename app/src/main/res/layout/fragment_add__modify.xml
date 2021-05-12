@@ -9,7 +9,7 @@
         android:id="@+id/imageView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/fondogeneral"
+        android:background="@mipmap/cuadrohojasenblanco"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,67 +21,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/cropname"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-            android:background="#55008F39"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
+            android:hint="Ingresa el nombre de tu cultivo"
+            android:inputType="textPersonName"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/textViewAdd"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center_horizontal"
-                android:text="Modifica tu cultivo"
-                android:textAlignment="center"
-                android:textSize="20dp" />
+        <EditText
+            android:id="@+id/croparea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:fontFamily="sans-serif-light"
+            android:hint="Ingresa el área de tu cultivo en m2"
+            android:inputType="textPersonName"
+            android:textSize="18sp" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-light"
-                android:text="Nombre del cultivo"
-                android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/btn_cropadd"
+            android:layout_width="47dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/inicio" />
 
-            <EditText
-                android:id="@+id/cropname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:hint="Ingresa el nombre de tu cultivo"
-                android:inputType="textPersonName"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-light"
-                android:text="Área"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/croparea"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:fontFamily="sans-serif-light"
-                android:hint="Ingresa el área de tu cultivo en m2"
-                android:inputType="textPersonName"
-                android:textSize="18sp" />
-
-            <ImageView
-                android:id="@+id/btn_cropadd"
-                android:layout_width="47dp"
-                android:layout_height="52dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/inicio" />
-        </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

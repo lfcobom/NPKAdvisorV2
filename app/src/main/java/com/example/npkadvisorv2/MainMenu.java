@@ -62,7 +62,7 @@ public class MainMenu extends AppCompatActivity {
     }
     public void Open1() {  //Lleva a la actividad Registro de información
 
-        startActivity(new Intent(MainMenu.this, ScreenCropss.class));
+        startActivity(new Intent(MainMenu.this, History.class));
     }
     public void Open2() {  //Lleva a la actividad Mapas
 
@@ -71,6 +71,6 @@ public class MainMenu extends AppCompatActivity {
 
     public void Open3() {  //Lleva a la actividad Gráficas
 
-        startActivity(new Intent(MainMenu.this, History.class));
+        startActivity(new Intent(MainMenu.this, Charts.class));
     }
 }

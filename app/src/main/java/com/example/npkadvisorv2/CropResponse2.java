@@ -70,6 +70,6 @@ public class CropResponse2 {
     @NonNull
     @Override
     public String toString() {
-        return cNombre;
+        return cNombre+cArea;
     }
 }

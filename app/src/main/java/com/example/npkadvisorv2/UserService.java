@@ -43,8 +43,10 @@ public interface UserService {
     @GET("index")
     Call<IndexResponse>findIndex();
 
-    //Consultar variables Humedad, Npk, Temperatura
+    //Consultar variables Humedad, NPK, Temperatura
     @NonNull
     @GET("index")
     Call<IndexResponse>findIndex1();
+
+
 }
