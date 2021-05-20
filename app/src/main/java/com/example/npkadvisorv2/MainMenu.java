@@ -71,6 +71,6 @@ public class MainMenu extends AppCompatActivity {
 
     public void Open3() {  //Lleva a la actividad Gráficas
 
-        startActivity(new Intent(MainMenu.this, Charts.class));
+        startActivity(new Intent(MainMenu.this, Grafic.class));
     }
 }
