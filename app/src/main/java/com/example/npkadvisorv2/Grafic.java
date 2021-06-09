@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
+//https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date
+//https://github.com/PhilJay/MPAndroidChart
+
 public class Grafic extends AppCompatActivity {
     Button btnbar, btnpie, btnline;
 

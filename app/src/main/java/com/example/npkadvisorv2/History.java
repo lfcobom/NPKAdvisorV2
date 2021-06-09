@@ -97,14 +97,14 @@ public class History extends AppCompatActivity {
                             fila = new TableRow(History.this);
                             fila.setLayoutParams(layoutFila);
                             if (i == 0) {
-                               // Date = new TextView(History.this);
-                               // Date.setText("FECHA");
-                                //Date.setGravity(Gravity.CENTER);
-                                //Date.setBackgroundColor(Color.BLACK);
-                                //Date.setTextColor(Color.WHITE);
-                                //Date.setPadding(10, 10, 10, 10);
-                                //Date.setLayoutParams(layoutDate);
-                                //fila.addView(Date);
+                                Date = new TextView(History.this);
+                                Date.setText("FECHA");
+                                Date.setGravity(Gravity.CENTER);
+                                Date.setBackgroundColor(Color.BLACK);
+                                Date.setTextColor(Color.WHITE);
+                                Date.setPadding(10, 10, 10, 10);
+                                Date.setLayoutParams(layoutDate);
+                                fila.addView(Date);
 
                                 Humedad = new TextView(History.this);
                                 Humedad.setText("HUMEDAD");
@@ -161,45 +161,59 @@ public class History extends AppCompatActivity {
                                 fila.addView(Temp);
                                 lista.addView(fila);
                             } else {
-                               //Date = new TextView(History.this);
-                                //Date.setText(IndexReponses.get(i).getCreateAt());
-                                //Date.setPadding(10, 10, 10, 10);
-                                //Date.setLayoutParams(layoutDate);
-                                //fila.addView(Date);
+                               Date = new TextView(History.this);
+                               Date.setText(IndexReponses.get(i).getCreateAt());
+                               Date.setPadding(10, 10, 10, 10);
+                               Date.setGravity(Gravity.CENTER);
+                               Date.setBackgroundColor(Color.BLUE);
+                               Date.setLayoutParams(layoutDate);
+                               fila.addView(Date);
 
                                 Humedad = new TextView(History.this);
                                 Humedad.setText(IndexReponses.get(i).getHumedad().toString());
                                 Humedad.setPadding(10, 10, 10, 10);
+                                Humedad.setGravity(Gravity.CENTER);
+                                Humedad.setBackgroundColor(Color.YELLOW);
                                 Humedad.setLayoutParams(layouthumedad);
                                 fila.addView(Humedad);
 
                                 N = new TextView(History.this);
                                 N.setText(IndexReponses.get(i).getN().toString());
                                 N.setPadding(10, 10, 10, 10);
+                                N.setGravity(Gravity.CENTER);
+                                N.setBackgroundColor(Color.RED);
                                 N.setLayoutParams(layoutN);
                                 fila.addView(N);
 
                                 P = new TextView(History.this);
                                 P.setText(IndexReponses.get(i).getP().toString());
                                 P.setPadding(10, 10, 10, 10);
+                                P.setGravity(Gravity.CENTER);
+                                P.setBackgroundColor(Color.GRAY);
                                 P.setLayoutParams(layoutP);
                                 fila.addView(P);
 
                                 K = new TextView(History.this);
                                 K.setText(IndexReponses.get(i).getK().toString());
                                 K.setPadding(10, 10, 10, 10);
+                                K.setGravity(Gravity.CENTER);
+                                K.setBackgroundColor(Color.GREEN);
                                 K.setLayoutParams(layoutK);
                                 fila.addView(K);
 
                                 Ph = new TextView(History.this);
                                 Ph.setText(IndexReponses.get(i).getPh().toString());
                                 Ph.setPadding(10, 10, 10, 10);
+                                Ph.setGravity(Gravity.CENTER);
+                                Ph.setBackgroundColor(Color.MAGENTA);
                                 Ph.setLayoutParams(layoutPh);
                                 fila.addView(Ph);
 
                                 Temp = new TextView(History.this);
                                 Temp.setText(IndexReponses.get(i).getTemp().toString());
                                 Temp.setPadding(10, 10, 10, 10);
+                                Temp.setGravity(Gravity.CENTER);
+                                Temp.setBackgroundColor(Color.WHITE);
                                 Temp.setLayoutParams(layoutTemp);
                                 fila.addView(Temp);
                                 lista.addView(fila);
